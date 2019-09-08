@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+    <title>Branch</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align:center; font-family:'Kalam', cursive">Branch Information</h2>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="/Branch/Create" class="btn btn-success" style="font-size:14px"><i class="fa fa-plus"></i>&nbsp; Create Branch </a>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:40px">
+        <div class="col-md-12">
+            <table id="myTable" class="table table-striped border">
+                <thead>
+                    <tr style="background: #F39E7B">
+                        <th>Branch Information</th>
+                        <th>Manager Information</th>
+                        <th>Picture</th>
+                        <th>Action Bar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (BankManagementSystem.Models.BRANCH item in Model)
+                    {
+                        <tr>
+                            <td>
+                                Name : @item.BRANCH_NAME <br />
+                                Phone : @item.BRANCH_PHONE <br />
+                                <address>
+                                    Address : @item.BRANCH_CITY,
+                                    @item.BRANCH_COUNTRY
+                                </address>
+                            </td>
+                            <td>
+                                Manager Name : @item.BRANCH_MANAGER_NAME <br />
+                                Email : @item.BRANCH_MANAGER_EMAIL <br />
+                                Password : @item.BRANCH_MANAGER_PASSWORD <br />
+                                Joid Date : @item.BRANCH_MANAGER_JOINDATE <br />
+                            </td>
+                            <td>
+                                @item.BRANCH_MANAGER_PICTURE <br />
+                            </td>
+                            <td>
+                                <a href="../Branch/Edit/@item.BRANCH_ID" class="btn btn-info"><i class="fa fa-edit"></i>&nbsp; Edit</a>
+                                <a href="../Branch/Delete/@item.BRANCH_ID" class="btn btn-danger"><i class="fa fa-eye-dropper"></i>&nbsp; Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿@model IEnumerable<BankManagementSystem.Models.BRANCH>
+
+<html>
+<head>
+    <title>Create Branch</title>
+
+    <style>
+        label.error {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align:center; font-family:'Kalam', cursive">Create Branch Information</h2>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form id="create" method="post" enctype="multipart/form-data" action="@Url.Action("Create", "Branch")">
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="Name" class="control-label col-md-2">Branch Name</label>
+                        <div class="col-md-10">
+                            <input type="text" id="Name" name="BRANCH_NAME" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="City" class="control-label col-md-2">City</label>
+                        <div class="col-md-10">
+                            <input type="text" id="City" name="BRANCH_CITY" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Country" class="control-label col-md-2">Country</label>
+                        <div class="col-md-10">
+                            <input type="text" id="Country" name="BRANCH_COUNTRY" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone" class="control-label col-md-2">Phone Number</label>
+                        <div class="col-md-10">
+                            <input type="number" id="Phone" name="BRANCH_PHONE" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Manager_Name" class="control-label col-md-2">Manager Name</label>
+                        <div class="col-md-10">
+                            <input type="text" id="Manager_Name" name="BRANCH_MANAGER_NAME" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="control-label col-md-2">Manager Email</label>
+                        <div class="col-md-10">
+                            <input type="email" id="Email" name="BRANCH_MANAGER_EMAIL" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password" class="control-label col-md-2">Manager Password</label>
+                        <div class="col-md-10">
+                            <input type="password" id="Password" name="BRANCH_MANAGER_PASSWORD" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Confirm_Password" class="control-label col-md-2">Confirm Password</label>
+                        <div class="col-md-10">
+                            <input type="password" id="Confirm_Password" name="Confirm_Password" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Picture" class="control-label col-md-2">Picture</label>
+                        <div class="col-md-10">
+                            <input type="file" id="Picture" name="BRANCH_MANAGER_PICTURE" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" class="btn btn-primary" />
+                            <a href="../Branch/Index" class="btn btn-info">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#Join_Date").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "d M, y",
+            showAnim: "clip"
+        });
+
+        $("#create").validate({
+            rules: {
+                BRANCH_NAME: "required",
+                BRANCH_CITY: "required",
+                BRANCH_COUNTRY: "required",
+                BRANCH_PHONE: {
+                    required: true,
+                    number: true,
+                    minlength: 11,
+                    maxlength: 11
+                },
+                BRANCH_MANAGER_NAME: "required",
+                BRANCH_MANAGER_EMAIL: {
+                    required: true,
+                    email: true,
+                    maxlength: 30
+                },
+                BRANCH_MANAGER_PASSWORD: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                Confirm_Password: {
+                    required: true,
+                    equalTo: "#BRANCH_MANAGER_PASSWORD"
+                }
+            },
+
+            message: {
+                BRANCH_NAME: "Branch name required",
+                BRANCH_CITY: "City of the Branch is required",
+                BRANCH_COUNTRY: "Country of the Branch is required",
+                BRANCH_PHONE: {
+                    required: "Branch phone number required",
+                    number: "Valid phone number required",
+                    minlength: "Minimum 11 digite",
+                    maxlength: "Maximum 11 digite"
+                },
+                BRANCH_MANAGER_NAME: "Branch manager name required",
+                BRANCH_MANAGER_EMAIL: {
+                    required: "Manager email required",
+                    email: "Valid email required",
+                    maxlength: "maximum 30 character"
+                },
+                BRANCH_MANAGER_PASSWORD: {
+                    required: "Password required",
+                    minlength: "Minimum 5 digite or chatacter",
+                    maxlength: "Minimum 50 digite or chatacter"
+                },
+                Confirm_Password: {
+                    required: "Confirm password required",
+                    equalTo: "Do not match password"
+                }
+            }
+        });
+    });
+</script>

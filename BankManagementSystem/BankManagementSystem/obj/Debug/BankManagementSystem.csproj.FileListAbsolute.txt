@@ -76,3 +76,5 @@ F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\o
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.pdb
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.dll
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.xml
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Validation.dll
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Validation.xml

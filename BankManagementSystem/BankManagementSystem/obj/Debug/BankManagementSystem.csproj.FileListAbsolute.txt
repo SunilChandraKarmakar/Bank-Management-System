@@ -74,3 +74,5 @@ F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\o
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.csproj.CopyComplete
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.dll
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.pdb
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.dll
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.xml

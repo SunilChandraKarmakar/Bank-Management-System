@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7d143699dc734bcb80adba41a5a2b0ba" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BRANCH" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CUSTOMER" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DEPARTMENT" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EMPLOYEE" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LOAN" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TRANSACTION" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VERIFYEMPLOYEE" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.SYS_C008000" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C008001" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007938" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007952" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007972" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007987" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007973" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007988" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007939" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007942" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007975" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C007990" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

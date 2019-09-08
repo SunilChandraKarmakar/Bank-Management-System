@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="ACCOUNT_ID" />
+    </Key>
+    <Property Name="ACCOUNT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ACCOUNT_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACCOUNT_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BALANCE" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="ACCOUNT_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.SYS_C008000" FromRole="ACCOUNTS" ToRole="CUSTOMER" />
+    <NavigationProperty Name="BRANCH" Relationship="Self.SYS_C008001" FromRole="ACCOUNTS" ToRole="BRANCH" />
+  </EntityType>
+  <EntityType Name="BRANCH">
+    <Key>
+      <PropertyRef Name="BRANCH_ID" />
+    </Key>
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRANCH_MANAGER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRANCH_MANAGER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRANCH_MANAGER_PASSWORD" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRANCH_MANAGER_JOINDATE" Type="DateTime" />
+    <Property Name="BRANCH_CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRANCH_COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRANCH_PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRANCH_MANAGER_PICTURE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACCOUNTS" Relationship="Self.SYS_C008001" FromRole="BRANCH" ToRole="ACCOUNTS" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="Self.SYS_C007938" FromRole="BRANCH" ToRole="EMPLOYEE" />
+    <NavigationProperty Name="CUSTOMERs" Relationship="Self.SYS_C007952" FromRole="BRANCH" ToRole="CUSTOMER" />
+    <NavigationProperty Name="TRANSACTIONS" Relationship="Self.SYS_C007972" FromRole="BRANCH" ToRole="TRANSACTIONS" />
+    <NavigationProperty Name="LOANs" Relationship="Self.SYS_C007987" FromRole="BRANCH" ToRole="LOAN" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="CUSTOMER_ID" />
+    </Key>
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CUSTOMER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CUSTOMER_PASSWORD" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CUSTOMER_PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CUSTOMER_JOINDATE" Type="DateTime" />
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CUSTOMER_ADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CUSTOMER_PICTURE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACCOUNTS" Relationship="Self.SYS_C008000" FromRole="CUSTOMER" ToRole="ACCOUNTS" />
+    <NavigationProperty Name="BRANCH" Relationship="Self.SYS_C007952" FromRole="CUSTOMER" ToRole="BRANCH" />
+    <NavigationProperty Name="TRANSACTIONS" Relationship="Self.SYS_C007973" FromRole="CUSTOMER" ToRole="TRANSACTIONS" />
+    <NavigationProperty Name="LOANs" Relationship="Self.SYS_C007988" FromRole="CUSTOMER" ToRole="LOAN" />
+  </EntityType>
+  <EntityType Name="DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DEPARTMENT_ID" />
+    </Key>
+    <Property Name="DEPARTMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HEAD_OF_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="Self.SYS_C007939" FromRole="DEPARTMENT" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMPLOYEE_ID" />
+    </Key>
+    <Property Name="EMPLOYEE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMPLOYEE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMPLOYEE_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMPLOYEE_PASSWORD" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EMPLOYEE_PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMPLOYEE_JOINDATE" Type="DateTime" />
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DEPARTMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EMPLOYEE_ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EMPLOYEE_PICTURE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BRANCH" Relationship="Self.SYS_C007938" FromRole="EMPLOYEE" ToRole="BRANCH" />
+    <NavigationProperty Name="DEPARTMENT" Relationship="Self.SYS_C007939" FromRole="EMPLOYEE" ToRole="DEPARTMENT" />
+    <NavigationProperty Name="VERIFYEMPLOYEEs" Relationship="Self.SYS_C007942" FromRole="EMPLOYEE" ToRole="VERIFYEMPLOYEE" />
+    <NavigationProperty Name="TRANSACTIONS" Relationship="Self.SYS_C007975" FromRole="EMPLOYEE" ToRole="TRANSACTIONS" />
+    <NavigationProperty Name="LOANs" Relationship="Self.SYS_C007990" FromRole="EMPLOYEE" ToRole="LOAN" />
+  </EntityType>
+  <EntityType Name="LOAN">
+    <Key>
+      <PropertyRef Name="LOAN_ID" />
+    </Key>
+    <Property Name="LOAN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ACCOUNT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EMPLOYEE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LOAN_AMMOUNT" Type="Int64" Nullable="false" />
+    <Property Name="INTEREST_RATE" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="DURATIONS" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="START_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="DUE_AMMOUNT" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+    <NavigationProperty Name="BRANCH" Relationship="Self.SYS_C007987" FromRole="LOAN" ToRole="BRANCH" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.SYS_C007988" FromRole="LOAN" ToRole="CUSTOMER" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="Self.SYS_C007990" FromRole="LOAN" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="TRANSACTION">
+    <Key>
+      <PropertyRef Name="TRANSACTIONS_ID" />
+    </Key>
+    <Property Name="TRANSACTIONS_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ACCOUNT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EMPLOYEE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CREDITEORDEPOSIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AMMOUNT" Type="Int64" Nullable="false" />
+    <Property Name="TRANSACTIONS_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DATETIMESTAMP" Type="DateTime" />
+    <NavigationProperty Name="BRANCH" Relationship="Self.SYS_C007972" FromRole="TRANSACTIONS" ToRole="BRANCH" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.SYS_C007973" FromRole="TRANSACTIONS" ToRole="CUSTOMER" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="Self.SYS_C007975" FromRole="TRANSACTIONS" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="VERIFYEMPLOYEE">
+    <Key>
+      <PropertyRef Name="VERIFYEMPLOYEE_ID" />
+    </Key>
+    <Property Name="VERIFYEMPLOYEE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMPLOYEE_ID" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="Self.SYS_C007942" FromRole="VERIFYEMPLOYEE" ToRole="EMPLOYEE" />
+  </EntityType>
+  <Association Name="SYS_C008000">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+    <End Role="ACCOUNTS" Type="Self.ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Principal>
+      <Dependent Role="ACCOUNTS">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C008001">
+    <End Role="BRANCH" Type="Self.BRANCH" Multiplicity="1" />
+    <End Role="ACCOUNTS" Type="Self.ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BRANCH">
+        <PropertyRef Name="BRANCH_ID" />
+      </Principal>
+      <Dependent Role="ACCOUNTS">
+        <PropertyRef Name="BRANCH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007938">
+    <End Role="BRANCH" Type="Self.BRANCH" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BRANCH">
+        <PropertyRef Name="BRANCH_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="BRANCH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007952">
+    <End Role="BRANCH" Type="Self.BRANCH" Multiplicity="1" />
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BRANCH">
+        <PropertyRef Name="BRANCH_ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="BRANCH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007972">
+    <End Role="BRANCH" Type="Self.BRANCH" Multiplicity="1" />
+    <End Role="TRANSACTIONS" Type="Self.TRANSACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BRANCH">
+        <PropertyRef Name="BRANCH_ID" />
+      </Principal>
+      <Dependent Role="TRANSACTIONS">
+        <PropertyRef Name="BRANCH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007987">
+    <End Role="BRANCH" Type="Self.BRANCH" Multiplicity="1" />
+    <End Role="LOAN" Type="Self.LOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BRANCH">
+        <PropertyRef Name="BRANCH_ID" />
+      </Principal>
+      <Dependent Role="LOAN">
+        <PropertyRef Name="BRANCH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007973">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+    <End Role="TRANSACTIONS" Type="Self.TRANSACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Principal>
+      <Dependent Role="TRANSACTIONS">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007988">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+    <End Role="LOAN" Type="Self.LOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Principal>
+      <Dependent Role="LOAN">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007939">
+    <End Role="DEPARTMENT" Type="Self.DEPARTMENT" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007942">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="0..1" />
+    <End Role="VERIFYEMPLOYEE" Type="Self.VERIFYEMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="EMPLOYEE_ID" />
+      </Principal>
+      <Dependent Role="VERIFYEMPLOYEE">
+        <PropertyRef Name="EMPLOYEE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007975">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="TRANSACTIONS" Type="Self.TRANSACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="EMPLOYEE_ID" />
+      </Principal>
+      <Dependent Role="TRANSACTIONS">
+        <PropertyRef Name="EMPLOYEE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C007990">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="LOAN" Type="Self.LOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="EMPLOYEE_ID" />
+      </Principal>
+      <Dependent Role="LOAN">
+        <PropertyRef Name="EMPLOYEE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Bank_Management_System_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCOUNTS" EntityType="Self.ACCOUNT" />
+    <EntitySet Name="BRANCHes" EntityType="Self.BRANCH" />
+    <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+    <EntitySet Name="DEPARTMENTs" EntityType="Self.DEPARTMENT" />
+    <EntitySet Name="EMPLOYEEs" EntityType="Self.EMPLOYEE" />
+    <EntitySet Name="LOANs" EntityType="Self.LOAN" />
+    <EntitySet Name="TRANSACTIONS" EntityType="Self.TRANSACTION" />
+    <EntitySet Name="VERIFYEMPLOYEEs" EntityType="Self.VERIFYEMPLOYEE" />
+    <AssociationSet Name="SYS_C008000" Association="Self.SYS_C008000">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="ACCOUNTS" EntitySet="ACCOUNTS" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C008001" Association="Self.SYS_C008001">
+      <End Role="BRANCH" EntitySet="BRANCHes" />
+      <End Role="ACCOUNTS" EntitySet="ACCOUNTS" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007938" Association="Self.SYS_C007938">
+      <End Role="BRANCH" EntitySet="BRANCHes" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007952" Association="Self.SYS_C007952">
+      <End Role="BRANCH" EntitySet="BRANCHes" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007972" Association="Self.SYS_C007972">
+      <End Role="BRANCH" EntitySet="BRANCHes" />
+      <End Role="TRANSACTIONS" EntitySet="TRANSACTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007987" Association="Self.SYS_C007987">
+      <End Role="BRANCH" EntitySet="BRANCHes" />
+      <End Role="LOAN" EntitySet="LOANs" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007973" Association="Self.SYS_C007973">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="TRANSACTIONS" EntitySet="TRANSACTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007988" Association="Self.SYS_C007988">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="LOAN" EntitySet="LOANs" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007939" Association="Self.SYS_C007939">
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENTs" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007942" Association="Self.SYS_C007942">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="VERIFYEMPLOYEE" EntitySet="VERIFYEMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007975" Association="Self.SYS_C007975">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="TRANSACTIONS" EntitySet="TRANSACTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C007990" Association="Self.SYS_C007990">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="LOAN" EntitySet="LOANs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

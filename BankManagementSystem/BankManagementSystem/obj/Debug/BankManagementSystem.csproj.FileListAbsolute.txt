@@ -78,3 +78,7 @@ F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\b
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.xml
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Validation.dll
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Validation.xml
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Oracle.ManagedDataAccess.dll
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.SqlServer.dll
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.SqlServer.xml

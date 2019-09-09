@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -37,6 +38,20 @@ namespace BankManagementSystem.Controllers
                 BRANCH_MANAGER_PICTURE.SaveAs(Server.MapPath("../Uploads/Manager_Picture/" + aBranch.BRANCH_ID.ToString() + "_" + aBranch.BRANCH_MANAGER_PICTURE));
                 return RedirectToAction("Index");
             }
+
+            return View(aBranch);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int? ID)
+        {
+            if (ID == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            BRANCH aBranch = bms.BRANCHes.Find(ID);
+
+            if (aBranch == null)
+                return HttpNotFound();
 
             return View(aBranch);
         }

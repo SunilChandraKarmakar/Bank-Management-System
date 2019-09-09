@@ -45,7 +45,7 @@
                                 Joid Date : @item.BRANCH_MANAGER_JOINDATE <br />
                             </td>
                             <td>
-                                @item.BRANCH_MANAGER_PICTURE <br />
+                                <img src="../Uploads/Manager_Picture/@(item.BRANCH_ID.ToString() + "_" + item.BRANCH_MANAGER_PICTURE)" height="100" />
                             </td>
                             <td>
                                 <a href="../Branch/Edit/@item.BRANCH_ID" class="btn btn-info"><i class="fa fa-edit"></i>&nbsp; Edit</a>

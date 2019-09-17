@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BankManagementSystem.Models.DEPARTMENT>
+
+<html>
+<head>
+    <title>Department</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align:center; font-family:'Kalam', cursive">Department Information</h2>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="/Department/Create" class="btn btn-success" style="font-size:14px"><i class="fa fa-plus"></i>&nbsp; Create Department </a>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:40px">
+        <div class="col-md-6" style="margin-left:200px">
+            <table id="myTable" class="table table-striped border">
+                <thead>
+                    <tr style="background: #F39E7B">
+                        <th>Department Name</th>
+                        <th>Hade Of Department</th>
+                        <th>Action Bar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (BankManagementSystem.Models.DEPARTMENT item in Model)
+                    {
+                        <tr>
+                            <td>
+                                Name : @item.DEPARTMENT_NAME <br />
+                            </td>
+                            <td>
+                                @item.HEAD_OF_DEPARTMENT <br />
+                            </td>
+                            <td>
+                                <a href="../Branch/Edit/@item.DEPARTMENT_ID" class="btn btn-info"><i class="fa fa-edit"></i>&nbsp; Edit</a>
+                                <a href="../Branch/Delete/@item.DEPARTMENT_ID" class="btn btn-danger"><i class="fa fa-eye-dropper"></i>&nbsp; Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

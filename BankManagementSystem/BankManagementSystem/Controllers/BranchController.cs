@@ -12,12 +12,12 @@ namespace BankManagementSystem.Controllers
 {
     public class BranchController : Controller
     {
-        private Bank_Management_System_Entities bms = new Bank_Management_System_Entities();
+        private Bank_Management_System_Entities bmse = new Bank_Management_System_Entities();
 
         [HttpGet]
         public ActionResult Index()
         {
-            return View(bms.BRANCHes.ToList());
+            return View(bmse.BRANCHes.ToList());
         }
 
         [HttpGet]
@@ -35,8 +35,8 @@ namespace BankManagementSystem.Controllers
 
             if (ModelState.IsValid)
             {
-                bms.BRANCHes.Add(aBranch);
-                bms.SaveChanges();
+                bmse.BRANCHes.Add(aBranch);
+                bmse.SaveChanges();
                 BRANCH_MANAGER_PICTURE.SaveAs(Server.MapPath("../Uploads/Manager_Picture/" + aBranch.BRANCH_ID.ToString() + "_" + aBranch.BRANCH_MANAGER_PICTURE));
                 return RedirectToAction("Index");
             }
@@ -50,7 +50,7 @@ namespace BankManagementSystem.Controllers
             if (ID == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            BRANCH aBranch = bms.BRANCHes.Find(ID);
+            BRANCH aBranch = bmse.BRANCHes.Find(ID);
 
             if (aBranch == null)
                 return HttpNotFound();
@@ -67,8 +67,8 @@ namespace BankManagementSystem.Controllers
 
             if (ModelState.IsValid)
             {
-                bms.Entry(aBranch).State = EntityState.Modified;
-                bms.SaveChanges();                 
+                bmse.Entry(aBranch).State = EntityState.Modified;
+                bmse.SaveChanges();                 
                 ManagerPicture.SaveAs(Server.MapPath("../../Uploads/Manager_Picture/" + aBranch.BRANCH_ID.ToString() + "_" + aBranch.BRANCH_MANAGER_PICTURE));             
                 return RedirectToAction("Index");                
             }
@@ -82,7 +82,7 @@ namespace BankManagementSystem.Controllers
             if (ID == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            BRANCH aBranch = bms.BRANCHes.Find(ID);
+            BRANCH aBranch = bmse.BRANCHes.Find(ID);
 
             if (aBranch == null)
                 return HttpNotFound();
@@ -94,9 +94,9 @@ namespace BankManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int ID)
         {
-            BRANCH aBranch = bms.BRANCHes.Find(ID);
-            bms.BRANCHes.Remove(aBranch);
-            bms.SaveChanges();
+            BRANCH aBranch = bmse.BRANCHes.Find(ID);
+            bmse.BRANCHes.Remove(aBranch);
+            bmse.SaveChanges();
             return RedirectToAction("Index");
         }
     }

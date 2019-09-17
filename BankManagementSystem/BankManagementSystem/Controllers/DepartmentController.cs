@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using BankManagementSystem.Models;
 
 namespace BankManagementSystem.Controllers
 {
     public class DepartmentController : Controller
     {
-        // GET: Department
+        private Bank_Management_System_Entities bmse = new Bank_Management_System_Entities();
+
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            return View(bmse.DEPARTMENTs.ToList());
         }
     }
 }

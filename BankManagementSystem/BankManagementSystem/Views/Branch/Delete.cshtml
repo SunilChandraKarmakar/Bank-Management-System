@@ -1,0 +1,50 @@
+﻿@model BankManagementSystem.Models.BRANCH
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center">
+            <h3 style="text-align:center; font-family:'Kalam', cursive">Delete Branch Information</h3>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-8">
+                <dl class="dl-horizontal">
+                    <dt>Branch Name</dt>
+                    <dd>@Model.BRANCH_NAME</dd>
+                    <dt>Phone Number</dt>
+                    <dd>@Model.BRANCH_PHONE</dd>
+                    <dt>Address</dt>
+                    <dd>@Model.BRANCH_CITY, @Model.BRANCH_COUNTRY</dd>
+                    
+                    <dt>Manager Name</dt>
+                    <dd>@Model.BRANCH_MANAGER_NAME</dd>
+                    <dt>Email</dt>
+                    <dd>@Model.BRANCH_MANAGER_EMAIL</dd>
+                    <dt>Password</dt>
+                    <dd>@Model.BRANCH_MANAGER_PASSWORD</dd>
+                </dl>
+                <form id="delete" method="post" action="@Url.Action("Delete", "Branch")">
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Delete" class="btn btn-danger" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4" style="margin-left:-260px">
+                <img src="~/Uploads/Manager_Picture/@(@Model.BRANCH_ID.ToString() + "_" + @Model.BRANCH_MANAGER_PICTURE)" height="150" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

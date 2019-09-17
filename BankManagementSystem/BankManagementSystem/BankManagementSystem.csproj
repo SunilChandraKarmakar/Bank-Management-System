@@ -522,6 +522,7 @@
     <Content Include="Views\Branch\Index.cshtml" />
     <Content Include="Views\Branch\Create.cshtml" />
     <Content Include="Views\Branch\Edit.cshtml" />
+    <Content Include="Views\Branch\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

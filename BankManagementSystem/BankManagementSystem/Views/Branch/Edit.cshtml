@@ -24,10 +24,19 @@
             <form id="edit" method="post" enctype="multipart/form-data" action="@Url.Action("Edit", "Branch")">
                 @Html.AntiForgeryToken()
                 <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <label for="BRANCH_ID" class="control-label col-md-2"></label>
+                        <div class="col-md-10">
+                            <input type="hidden" id="BRANCH_ID" name="BRANCH_ID" value="@Model.BRANCH_ID" class="form-control" />
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <label for="BRANCH_NAME" class="control-label col-md-2">Branch Name</label>
                         <div class="col-md-10">
-                            <input type="text" id="BRANCH_NAME" name="BRANCH_NAME" value="@Model.BRANCH_MANAGER_NAME" class="form-control" />
+                            <input type="text" id="BRANCH_NAME" name="BRANCH_NAME" value="@Model.BRANCH_NAME" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -69,14 +78,14 @@
                     <div class="form-group">
                         <label for="Confirm_Password" class="control-label col-md-2">Confirm Password</label>
                         <div class="col-md-10">
-                            <input type="password" id="Confirm_Password" name="Confirm_Password" class="form-control" />
+                            <input type="password" id="Confirm_Password" name="Confirm_Password" value="@Model.BRANCH_MANAGER_PASSWORD" class="form-control" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="BRANCH_MANAGER_PICTURE" class="control-label col-md-2">Picture</label>
                         <div class="col-md-10">
-                            <input type="file" id="BRANCH_MANAGER_PICTURE" name="BRANCH_MANAGER_PICTURE" class="form-control" />
+                            <input type="file" id="BRANCH_MANAGER_PICTURE" name="ManagerPicture" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">

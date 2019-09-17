@@ -21,81 +21,86 @@
 
     <div class="row">
         <div class="col-md-12">
-            <form id="edit" method="post" enctype="multipart/form-data" action="@Url.Action("Edit", "Branch")">
-                @Html.AntiForgeryToken()
-                <div class="form-horizontal">
+            <div class="col-md-10">
+                <form id="edit" method="post" enctype="multipart/form-data" action="@Url.Action("Edit", "Branch")">
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
 
-                    <div class="form-group">
-                        <label for="BRANCH_ID" class="control-label col-md-2"></label>
-                        <div class="col-md-10">
-                            <input type="hidden" id="BRANCH_ID" name="BRANCH_ID" value="@Model.BRANCH_ID" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_ID" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input type="hidden" id="BRANCH_ID" name="BRANCH_ID" value="@Model.BRANCH_ID" class="form-control" />
+                            </div>
                         </div>
-                    </div>
 
 
-                    <div class="form-group">
-                        <label for="BRANCH_NAME" class="control-label col-md-2">Branch Name</label>
-                        <div class="col-md-10">
-                            <input type="text" id="BRANCH_NAME" name="BRANCH_NAME" value="@Model.BRANCH_NAME" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_NAME" class="control-label col-md-2">Branch Name</label>
+                            <div class="col-md-10">
+                                <input type="text" id="BRANCH_NAME" name="BRANCH_NAME" value="@Model.BRANCH_NAME" class="form-control" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="BRANCH_CITY" class="control-label col-md-2">City</label>
-                        <div class="col-md-10">
-                            <input type="text" id="BRANCH_CITY" name="BRANCH_CITY" value="@Model.BRANCH_CITY" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_CITY" class="control-label col-md-2">City</label>
+                            <div class="col-md-10">
+                                <input type="text" id="BRANCH_CITY" name="BRANCH_CITY" value="@Model.BRANCH_CITY" class="form-control" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="BRANCH_COUNTRY" class="control-label col-md-2">Country</label>
-                        <div class="col-md-10">
-                            <input type="text" id="BRANCH_COUNTRY" name="BRANCH_COUNTRY" value="@Model.BRANCH_COUNTRY" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_COUNTRY" class="control-label col-md-2">Country</label>
+                            <div class="col-md-10">
+                                <input type="text" id="BRANCH_COUNTRY" name="BRANCH_COUNTRY" value="@Model.BRANCH_COUNTRY" class="form-control" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="BRANCH_PHONE" class="control-label col-md-2">Phone Number</label>
-                        <div class="col-md-10">
-                            <input type="number" id="BRANCH_PHONE" name="BRANCH_PHONE" value="@Model.BRANCH_PHONE" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_PHONE" class="control-label col-md-2">Phone Number</label>
+                            <div class="col-md-10">
+                                <input type="number" id="BRANCH_PHONE" name="BRANCH_PHONE" value="@Model.BRANCH_PHONE" class="form-control" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="BRANCH_MANAGER_NAME" class="control-label col-md-2">Manager Name</label>
-                        <div class="col-md-10">
-                            <input type="text" id="BRANCH_MANAGER_NAME" name="BRANCH_MANAGER_NAME" value="@Model.BRANCH_MANAGER_NAME" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_MANAGER_NAME" class="control-label col-md-2">Manager Name</label>
+                            <div class="col-md-10">
+                                <input type="text" id="BRANCH_MANAGER_NAME" name="BRANCH_MANAGER_NAME" value="@Model.BRANCH_MANAGER_NAME" class="form-control" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="BRANCH_MANAGER_EMAIL" class="control-label col-md-2">Manager Email</label>
-                        <div class="col-md-10">
-                            <input type="email" id="BRANCH_MANAGER_EMAIL" name="BRANCH_MANAGER_EMAIL" value="@Model.BRANCH_MANAGER_EMAIL" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_MANAGER_EMAIL" class="control-label col-md-2">Manager Email</label>
+                            <div class="col-md-10">
+                                <input type="email" id="BRANCH_MANAGER_EMAIL" name="BRANCH_MANAGER_EMAIL" value="@Model.BRANCH_MANAGER_EMAIL" class="form-control" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="BRANCH_MANAGER_PASSWORD" class="control-label col-md-2">Manager Password</label>
-                        <div class="col-md-10">
-                            <input type="password" id="BRANCH_MANAGER_PASSWORD" name="BRANCH_MANAGER_PASSWORD" value="@Model.BRANCH_MANAGER_PASSWORD" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_MANAGER_PASSWORD" class="control-label col-md-2">Manager Password</label>
+                            <div class="col-md-10">
+                                <input type="password" id="BRANCH_MANAGER_PASSWORD" name="BRANCH_MANAGER_PASSWORD" value="@Model.BRANCH_MANAGER_PASSWORD" class="form-control" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Confirm_Password" class="control-label col-md-2">Confirm Password</label>
-                        <div class="col-md-10">
-                            <input type="password" id="Confirm_Password" name="Confirm_Password" value="@Model.BRANCH_MANAGER_PASSWORD" class="form-control" />
+                        <div class="form-group">
+                            <label for="Confirm_Password" class="control-label col-md-2">Confirm Password</label>
+                            <div class="col-md-10">
+                                <input type="password" id="Confirm_Password" name="Confirm_Password" value="@Model.BRANCH_MANAGER_PASSWORD" class="form-control" />
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="BRANCH_MANAGER_PICTURE" class="control-label col-md-2">Picture</label>
-                        <div class="col-md-10">
-                            <input type="file" id="BRANCH_MANAGER_PICTURE" name="ManagerPicture" class="form-control" />
+                        <div class="form-group">
+                            <label for="BRANCH_MANAGER_PICTURE" class="control-label col-md-2">Picture</label>
+                            <div class="col-md-10">
+                                <input type="file" id="BRANCH_MANAGER_PICTURE" name="ManagerPicture" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btn-primary" />
+                                <a href="../../Branch/Index" class="btn btn-info">Back to List</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" class="btn btn-primary" />
-                            <a href="../../Branch/Index" class="btn btn-info">Back to List</a>
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            <div class="col-md-2" style="margin-left:-300px; margin-top:100px">
+                <img src="~/Uploads/Manager_Picture/@(Model.BRANCH_ID.ToString() + "_" + Model.BRANCH_MANAGER_PICTURE)" height="180"/>
+            </div>
         </div>
     </div>
 </body>

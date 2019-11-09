@@ -17,5 +17,13 @@ namespace BankManagementSystem.Controllers
         {
             return View(bmse.DEPARTMENTs.ToList());
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+
     }
 }

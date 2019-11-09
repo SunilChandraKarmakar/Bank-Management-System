@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BankManagementSystem.Models.DEPARTMENT>
+
+<html>
+<head>
+    <title>Create Department</title>
+
+    <style>
+        label.error {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align:center; font-family:'Kalam', cursive">Create Department Information</h2>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form id="create" method="post" enctype="multipart/form-data" action="@Url.Action("Create", "Department")">
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="Name" class="control-label col-md-2">Depatment Name</label>
+                        <div class="col-md-10">
+                            <input type="text" id="Name" name="Department_Name" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Department_Head" class="control-label col-md-2">Head of Department</label>
+                        <div class="col-md-10">
+                            <input type="text" id="Department_Head" name="Head_Of_Department" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" class="btn btn-primary" />
+                            <a href="../Department/Index" class="btn btn-info">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#create").validate({
+            rules: {
+                Name: "required",
+                Department_Head: "required",
+            },
+
+            message: {
+                Name: "Department name required",
+                Department_Head: "Department of head is required",
+            }
+        });
+    });
+</script>

@@ -1,12 +1,11 @@
 ﻿using BankManagementSystem.Models;
 using System;
+using System.Data.Entity;
 using System.IO;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
 
 namespace BankManagementSystem.Controllers
 {
@@ -68,9 +67,9 @@ namespace BankManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 bmse.Entry(aBranch).State = EntityState.Modified;
-                bmse.SaveChanges();                 
-                ManagerPicture.SaveAs(Server.MapPath("../../Uploads/Manager_Picture/" + aBranch.BRANCH_ID.ToString() + "_" + aBranch.BRANCH_MANAGER_PICTURE));             
-                return RedirectToAction("Index");                
+                bmse.SaveChanges();
+                ManagerPicture.SaveAs(Server.MapPath("../../Uploads/Manager_Picture/" + aBranch.BRANCH_ID.ToString() + "_" + aBranch.BRANCH_MANAGER_PICTURE));
+                return RedirectToAction("Index");
             }
 
             return View(aBranch);

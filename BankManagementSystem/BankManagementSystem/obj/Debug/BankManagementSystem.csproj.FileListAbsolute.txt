@@ -70,7 +70,6 @@ F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\b
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Antlr3.Runtime.pdb
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.csprojAssemblyReference.cache
-F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.csproj.CoreCompileInputs.cache
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.csproj.CopyComplete
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.dll
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.pdb
@@ -82,3 +81,4 @@ F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\b
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.SqlServer.dll
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\Oracle.ManagedDataAccess.EntityFramework.dll
 F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\bin\EntityFramework.SqlServer.xml
+F:\C# Project\Bank-Management-System\BankManagementSystem\BankManagementSystem\obj\Debug\BankManagementSystem.csproj.CoreCompileInputs.cache
